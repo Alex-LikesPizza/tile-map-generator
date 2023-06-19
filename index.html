@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tile Map Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="icon.png" type="image/x-icon">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Tile Map Generator</h1>
+    </header>
+    <section class="container">
+        <h1 class="front">Input</h1>
+        <div id="canvas"></div>
+
+        <div class="tools">
+            <div class="tool tool-active" id="pen" onpointerup="changeTool('pen')">Pen (1)</div>            
+            <div class="tool" id="bucket" onpointerup="changeTool('bucket')">Fill (2)</div>
+            <div class="tool" id="eraser" onpointerup="changeTool('eraser')">Eraser (3)</div>
+        </div>
+        <div class="tools secondary-tools">
+            <div class="tool">Value <input id="value" type="number" placeholder="1" value="1" maxlength="2"></div>
+            <div class="tool">Color <input type="color" id="color" value="#FF0000"></div>
+            <div class="tool">Size <input type="number" id="size-x" placeholder="10" value="10" maxlength="2"> x <input type="number" id="size-y" placeholder="10" value="10" maxlength="2"></div>
+        </div>
+        <div class="output">
+            <h1 class="front">Output</h1>
+            <div class="pre-output">
+                <div>
+                    <div class="output-button" id="build" onclick="build()" style="display: inline-block;">Build</div>
+                    <div class="output-button" id="commas" onclick="addCommas()" style="display: inline-block;">Separate</div>
+                </div>
+                <div class="output-button" id="copy" onclick="copyText()">Copy</div>
+            </div>
+            <textarea id="output" readonly></textarea>
+        </div>
+    </section>
+
+    <div style="width: 100%; height: 4rem;"></div>
+    <footer></footer>
+</body>
+</html>
